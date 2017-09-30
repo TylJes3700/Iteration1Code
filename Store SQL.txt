@@ -1,0 +1,31 @@
+CREATE DATABASE Store;
+
+CREATE TABLE Products (
+	ProductID int not null primary key,
+	ProductName char(30) not null,
+	Price decimal(9,2),
+	UnitType char(6),
+	Quantity int,
+	Expiration datetime,
+	Supplier char(30),
+	TaxRate decimal(5,2));
+	
+CREATE TABLE Orders (
+	OrderNo int not null primary key,
+	OrderTime datetime not null,
+	PayType char(6),
+	SubTotal decimal(9,2),
+	Total decimal(9,2),
+	Tax decimal(9,2));
+	
+INSERT INTO Products VALUES (905474, 'Bananas', 1.12, 'oz', 200, '2017-09-27', 'Florida Bananas Inc', 0.09);
+INSERT INTO Products VALUES (786532, 'Cigarettes', 8.00, 'single', 50, '2018-12-25', 'KillMyLungs Inc', 0.20);
+INSERT INTO Products VALUES (356412, 'Salmon', 4.15, 'lb', 15, '2017-10-8', 'Alaskan Fish Inc', 0.09);
+INSERT INTO Products VALUES (478868, 'Peanut Butter', 3.29, 'single', 26, '2017-12-22', 'JIF Peanut Butter', 0.09); 
+INSERT INTO Products VALUES (113475, 'White Bread', 2.29, 'single', 34, '2017-09-30', 'Bunny Bread', 0.09);
+
+INSERT INTO Orders VALUES (126500, '2017-09-21', 'credit', 66.55, 72.54, 5.99);
+INSERT INTO Orders VALUES (126501, '2017-09-21', 'debit', 29.49, 32.15, 2.66);
+INSERT INTO Orders VALUES (126502, '2017-09-21', 'cash', 11.10, 12.10, 1.00);
+INSERT INTO Orders VALUES (126503, '2017-09-21', 'credit', 133.64, 145.67, 12.03);
+INSERT INTO Orders VALUES (126504, '2017-09-21', 'cash', 55.70, 60.71, 5.01);
