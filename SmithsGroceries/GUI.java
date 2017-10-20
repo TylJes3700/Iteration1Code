@@ -10,6 +10,7 @@ import javafx.stage.*;
 public class GUI {
 
    public static DecimalFormat formatter = new DecimalFormat("###,###,##0.00");
+   public static DecimalFormat formatter2 = new DecimalFormat("0.00");
 
     // Returns switch screen action handler to reduce number of anonymous classes
    public static EventHandler<ActionEvent> changeScreen(int newPane) {

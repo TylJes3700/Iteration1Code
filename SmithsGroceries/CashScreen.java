@@ -111,7 +111,7 @@ public class CashScreen {
                else {
                   try {
                      payment = Double.parseDouble(paymentField.getText());
-                     if (payment < Double.valueOf(GUI.formatter.format(CheckoutScreen.getTotal()))) {
+                     if (payment < CheckoutScreen.getTotal()) {
                         message = "Payment must be >= Total";
                      }
                      if (payment > 999999999) {

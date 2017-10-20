@@ -223,7 +223,7 @@ public class CheckoutScreen {
    }
    
    public static double getTotal() {
-      return total;
+      return Double.valueOf(GUI.formatter2.format(total));
    }
 
    public static List<Product> getProducts() {
