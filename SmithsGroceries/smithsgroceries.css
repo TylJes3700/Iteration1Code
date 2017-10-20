@@ -1,0 +1,95 @@
+/* General */
+.root {
+	-fx-background: #B8DCB2;
+	-fx-font-family: 'Helvetica';
+	-fx-font-weight: bold;
+}
+
+.label {
+	-fx-font-size: 20px;
+}
+
+.button {
+	-fx-background-color: #FFFFFF;
+	-fx-border-color: #48913D;
+	-fx-border-width: 3;
+	-fx-border-radius: 5;
+	-fx-background-radius: 5;
+	-fx-font-size: 30px;
+}
+
+.button:focused {
+	/*-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);*/
+}
+
+.button:hover {
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+.button:pressed {
+	-fx-background-color: #FCD8DB;
+	-fx-border-color: #A24249;
+}
+
+.text-field {
+	-fx-font-size: 20px;
+	-fx-text-alignment: CENTER;
+}
+
+.radio-button {
+	-fx-font-size: 18px;
+}
+
+#cancel-button {
+	-fx-font-size: 20px;
+}
+
+#confirm-button {
+	-fx-font-size: 16px;
+}
+
+#header {
+	-fx-font-size: 40px;
+}
+
+#welcome-label {
+	-fx-font-size: 24px;
+}
+
+/* Checkout Screen */
+
+.scroll-pane {
+	-fx-background: #FFFFFF;
+	-fx-background-color: #48913D;
+}
+
+#id-search-label {
+	-fx-font-size: 25px;
+}
+
+#checkout-product-label {
+	-fx-font-size: 20px;
+}
+
+#checkout-total-label {
+	-fx-background-color: #D8EED5;
+	-fx-border-color: #FFFFFF #48913D #48913D #48913D;
+}
+
+#checkout-product-title {
+	-fx-background-color: #D8EED5;
+	-fx-border-color: #48913D #48913D #FFFFFF #48913D;
+}
+
+#checkout-price-title {
+	-fx-background-color: #D8EED5;
+	-fx-border-color: #48913D #48913D #FFFFFF #48913D;
+}
+
+/* Cash Payment */
+#cash-payment-label {
+	-fx-font-size: 30px;
+}
+#cash-payment-button {
+	-fx-font-size: 20px;
+}
