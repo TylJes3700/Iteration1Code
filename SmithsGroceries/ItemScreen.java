@@ -273,12 +273,13 @@ public class ItemScreen {
    
    private static boolean anyBadNumbers() {
       String message = "";
+      String c1Text = contactField1.getText(), c2Text = contactField2.getText(), c3Text = contactField3.getText();
       int c1 = 0, c2 = 0, c3 = 0;
       try {
-         c1 = Integer.parseInt(contactField1.getText());
-         c2 = Integer.parseInt(contactField2.getText());
-         c3 = Integer.parseInt(contactField3.getText());
-         if (c1 < 100 || c1 > 999 || c2 < 100 || c2 > 999 || c3 < 1000 || c3 > 9999) {
+         c1 = Integer.parseInt(c1Text);
+         c2 = Integer.parseInt(c2Text);
+         c3 = Integer.parseInt(c3Text);
+         if (c1Text.length() != 3 || c2Text.length() != 3 || c3Text.length() != 4) {
             throw new NumberFormatException();
          }
       }
@@ -321,7 +322,7 @@ public class ItemScreen {
          message = "Quantity must be an integer (single) or double (lb/oz)";
       }
       if (message.equals("")) {
-         contact = Integer.toString(c1) + "-" + Integer.toString(c2) + "-" + Integer.toString(c3);
+         contact = c1Text + "-" + c2Text + "-" + c3Text;
          return false;
       }
       GUI.showAlert(alert, gridPane.getScene().getWindow(), "Form Error", message);

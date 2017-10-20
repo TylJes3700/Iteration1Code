@@ -301,12 +301,14 @@ public class CardScreen {
    
    private static boolean anyBadNumbers() {
       String message = "";
+      String card1Text = cardField1.getText(), card2Text = cardField2.getText(), card3Text = cardField3.getText(), card4Text = cardField4.getText();
+      String c1Text = contactField1.getText(), c2Text = contactField2.getText(), c3Text = contactField3.getText();
       int c1 = 0, c2 = 0, c3 = 0, card1 = 0, card2 = 0, card3 = 0, card4 = 0, csc, zip, pin;
       try {
          c1 = Integer.parseInt(contactField1.getText());
          c2 = Integer.parseInt(contactField2.getText());
          c3 = Integer.parseInt(contactField3.getText());
-         if (c1 < 100 || c1 > 999 || c2 < 100 || c2 > 999 || c3 < 1000 || c3 > 9999) {
+         if (c1Text.length() != 3 || c2Text.length() != 3 || c3Text.length() != 4) {
             throw new NumberFormatException();
          }
       }
@@ -326,7 +328,7 @@ public class CardScreen {
       }
       try {
          zip = Integer.parseInt(zipField.getText());
-         if (zip < 10000 || zip > 99999) {
+         if (zipField.getText().length() != 5) {
             throw new NumberFormatException();
          }
       }
@@ -335,7 +337,7 @@ public class CardScreen {
       }
       try {
          csc = Integer.parseInt(cscField.getText());
-         if (csc < 100 || csc > 999) {
+         if (cscField.getText().length() != 3) {
             throw new NumberFormatException();
          }
       }
@@ -343,11 +345,11 @@ public class CardScreen {
          message = "CSC must be 3 digits ###";
       }
       try {
-         card1 = Integer.parseInt(cardField1.getText());
-         card2 = Integer.parseInt(cardField2.getText());
-         card3 = Integer.parseInt(cardField3.getText());
-         card4 = Integer.parseInt(cardField4.getText());
-         if (card1 < 1000 || card1 > 9999 || card2 < 1000 || card2 > 9999 || card3 < 1000 || card3 > 9999 || card4 < 1000 || card4 > 9999) {
+         card1 = Integer.parseInt(card1Text);
+         card2 = Integer.parseInt(card2Text);
+         card3 = Integer.parseInt(card3Text);
+         card4 = Integer.parseInt(card4Text);
+         if (card1Text.length() != 4 || card2Text.length() != 4 || card3Text.length() != 4 || card4Text.length() != 4) {
             throw new NumberFormatException();
          }
       }
@@ -355,8 +357,8 @@ public class CardScreen {
          message = "Card number must be 16 digits \n#### - #### - #### - ####";
       }
       if (message.equals("")) {
-         phone = Integer.toString(c1) + "-" + Integer.toString(c2) + "-" + Integer.toString(c3);
-         card = Integer.toString(card1) + "-" + Integer.toString(card2) + "-" + Integer.toString(card3) + "-" + Integer.toString(card4);
+         phone = c1Text + "-" + c2Text + "-" + c3Text;
+         card = card1Text + "-" + card2Text + "-" + card3Text + "-" + card4Text;
          return false;
       }
       GUI.showAlert(alert, gridPane.getScene().getWindow(), "Form Error", message);
