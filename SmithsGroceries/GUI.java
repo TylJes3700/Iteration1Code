@@ -198,4 +198,15 @@ public class GUI {
       alert.show();
    }
    
+   public static void testOutput(Product product) {
+      System.out.println(product.getID());
+      System.out.println(product.getName());
+      System.out.println(product.getUnit());
+      System.out.println(product.getPrice());
+      System.out.println(product.getTax());
+      System.out.println(product.getQuantity());
+      System.out.println(product.getExpDate());
+      System.out.println(product.getVendor());
+      System.out.println(product.getContact());
+   }
 }

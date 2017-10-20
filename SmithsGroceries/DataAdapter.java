@@ -62,6 +62,7 @@ public class DataAdapter {
             statement.setString(8, product.getVendor());
             statement.setString(9, product.getContact());
          }
+         GUI.testOutput(product);
          statement.execute();
       
          resultSet.close();
